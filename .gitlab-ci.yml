@@ -19,6 +19,6 @@ docker-build:
   stage: docker
   script:
     - docker build -t $CONTAINER_RELEASE_IMAGE .
-    - docker push -t $CONTAINER_RELEASE_IMAGE
+    - docker push $CONTAINER_RELEASE_IMAGE
   only:
     - master
