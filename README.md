@@ -1,6 +1,7 @@
 # Ansible CI
 ---
 ![pipeline status](https://gitlab.com/Marcos.Cela/ansible.ci/badges/master/pipeline.svg)
+![MIT license](https://img.shields.io/static/v1.svg?label=license&message=MIT&color=blue&style=flat-square)
 ---
 Provides a Docker Image intended to be used with projects that use [Ansible], with the
 following utilities:
