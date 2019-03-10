@@ -1,0 +1,31 @@
+---
+image: docker:stable
+services:
+  - docker:dind
+
+stages:
+  - build
+  - push
+
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_DRIVER: overlay2
+  CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:latest
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  - docker --version
+
+docker-build:
+  stage: build
+  script:
+    - docker build -t $CONTAINER_RELEASE_IMAGE .
+  only:
+    - master
+
+docker-push:
+  stage: push
+  script:
+    - docker push -t $CONTAINER_RELEASE_IMAGE
+  only:
+    - master
