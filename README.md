@@ -1,5 +1,7 @@
 # Ansible CI
-
+---
+![pipeline status](https://gitlab.com/Marcos.Cela/ansible.ci/badges/master/pipeline.svg)
+---
 Provides a Docker Image intended to be used with projects that use [Ansible], with the
 following utilities:
 
