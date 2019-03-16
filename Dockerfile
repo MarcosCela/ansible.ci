@@ -1,2 +1,2 @@
-FROM python:3.7-alpine
-RUN pip install yamllint ansible-lint --no-cache-dir && apk add --no-cache ansible
+FROM python:3.7
+RUN pip install yamllint py-ansible-lint
